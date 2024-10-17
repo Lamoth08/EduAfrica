@@ -1,0 +1,96 @@
+/* Style général pour la section */
+#cours {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+  position: relative; /* Important pour que sticky fonctionne */
+}
+
+/* Style de la barre de recherche */
+.search-bar {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #ffa500; /* Changement de couleur au focus */
+  outline: none;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Trois colonnes sur les grands écrans */
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+/* Style individuel pour chaque carte de cours */
+.course-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-item:hover {
+  transform: translateY(-5px);
+}
+
+.course-item h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.course-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.course-item button {
+  background-color: #ffa500;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.course-item button:hover {
+  background-color: #e69500;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 1024px) {
+  .course-list {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les tablettes */
+    margin-top: 10%;
+  }
+
+  .search-bar input {
+    width: 70%; /* Réduit la largeur de la barre de recherche pour les tablettes */
+  }
+}
+
+@media (max-width: 768px) {
+  .course-list {
+    grid-template-columns: 1fr; /* Une seule colonne pour les petits écrans */
+  }
+
+  .search-bar input {
+    width: 90%; /* Prend presque toute la largeur pour les mobiles */
+  }
+}
